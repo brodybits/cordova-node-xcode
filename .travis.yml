@@ -18,7 +18,7 @@ install:
   - node --version
   - npm --version
   - 'echo "${TRAVIS_NODE_VERSION}"'
-  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8.28" ] ; then nvm install --latest-npm 0.8 ; fi'
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8" ] ; then nvm install --latest-npm 0.8 ; fi'
   - npm install
   - node --version
   - npm --version
