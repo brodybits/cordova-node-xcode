@@ -16,7 +16,9 @@ before_install:
   # NOTE: nvm install-latest-npm is needed for Node.js 0.8
   # TODO: use nvm install once we drop Node.js 0.8
   - nvm install $TRAVIS_NODE_VERSION
-  - test $TRAVIS_NODE_VERSION = 0.8.28 && nvm install-latest-npm
+  - [ $TRAVIS_NODE_VERSION = 0.8.28 ] && echo yes
+  - nvm install-latest-npm
+  # - [ $TRAVIS_NODE_VERSION = 0.8.28 ] && nvm install-latest-npm
 
 install:
   - npm install
