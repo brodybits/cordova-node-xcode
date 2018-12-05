@@ -1,0 +1,38 @@
+language: objective-c
+osx_image: xcode9.3
+sudo: false
+
+env:
+  matrix:
+    - TRAVIS_NODE_VERSION: '0.8.28'
+    - TRAVIS_NODE_VERSION: '0.10'
+    - TRAVIS_NODE_VERSION: '0.12'
+    - TRAVIS_NODE_VERSION: '4'
+    - TRAVIS_NODE_VERSION: '6'
+    - TRAVIS_NODE_VERSION: '8'
+    - TRAVIS_NODE_VERSION: '10'
+
+before_install:
+  - node --version
+  - npm --version
+  # NOTE: nvm install-latest-npm is needed for Node.js 0.8
+  # TODO: use nvm install once we drop Node.js 0.8
+  - nvm --version
+  - nvm install $TRAVIS_NODE_VERSION
+  - node --version
+  - npm --version
+  # Workaround for issue with npm on Node.js 0.8:
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8.28" ] ; then echo "running nvm install-latest-npm" ; fi'
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8.28" ] ; then nvm install-latest-npm ; fi'
+  #- '[ "$TRAVIS_NODE_VERSION" = 0.8.28 ] && nvm install-latest-npm'
+  - node --version
+  - npm --version
+
+install:
+  - node --version
+  - npm --version
+  - npm install
+  - npm install ios-deploy
+
+script:
+  - npm test
