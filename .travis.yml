@@ -23,7 +23,7 @@ before_install:
   - npm --version
   # Workaround for issue with npm on Node.js 0.8:
   - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8.28" ] ; then echo "running nvm install-latest-npm" ; fi'
-  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8.28" ] ; then nvm install --latest-npm ; fi'
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.8.28" ] ; then nvm install --latest-npm 0.8.28 ; fi'
   #- '[ "$TRAVIS_NODE_VERSION" = 0.8.28 ] && nvm install-latest-npm'
   - node --version
   - npm --version
