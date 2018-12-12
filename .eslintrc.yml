@@ -1,0 +1,34 @@
+root: true
+
+extends:
+  - standard
+  - prettier
+
+rules:
+  # semistandard rules:
+  semi:
+    - error
+    - always
+  no-extra-semi:
+    - error
+
+  # FUTURE TBD
+  # general indent rule:
+  # indent:
+  #   - error
+  #   - 4
+
+  # general custom rule(s):
+  camelcase: off
+
+  # FUTURE TODO resolve these in lib & test:
+  padded-blocks: off
+  operator-linebreak: off
+
+  # FUTURE TBD configure these globally or not:
+  # padded-blocks: off
+  # operator-linebreak: off
+  # no-throw-literal: off
+  # no-unused-vars:
+  #   - error
+  #   - args: after-used
